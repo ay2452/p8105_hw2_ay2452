@@ -101,3 +101,8 @@ baby_names_data =
       factor(levels = 1:4, labels = c("Asian and Pacific Islander", "Black Non Hispanic", "White Non Hispanic", "Hispanic"))
   )
 ```
+
+```{r problem 3.2}
+Olivia_data = 
+  filter(baby_names_data, childs_first_name == "Olivia")
+```
