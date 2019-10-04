@@ -1,0 +1,21 @@
+---
+title: "Hmwk2"
+author: "Alicia Yang"
+date: "10/4/2019"
+output: github_document
+---
+
+```{r problem 1.1}
+library(tidyverse)
+library(readxl)
+
+Trash_Wheel_data = 
+  read_excel("./Hmwk2data/Trash_Wheel.xlsx", sheet = "Mr. Trash Wheel") %>%
+  janitor::clean_names() %>%
+  select(-x15, -x16, -x17) %>%
+  drop_na(dumpster, year, date) %>%
+  mutate(
+  sports_balls = round(sports_balls, digits = 0))
+
+as.integer(pull(Trash_Wheel_data, sports_balls))
+```
