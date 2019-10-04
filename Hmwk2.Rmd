@@ -65,3 +65,14 @@ snp_data =
   select(-day) %>%
   select(year, month, close)
 ```
+
+```{r problem 2.3}
+unemployment_data = 
+  read_csv("./fivethirtyeight_datasets/unemployment.csv") %>%
+  janitor::clean_names() %>%
+  pivot_longer(
+    Jan:Dec, 
+    names_to = "month", 
+    values_to = "unemploy_rate"
+  )
+```
