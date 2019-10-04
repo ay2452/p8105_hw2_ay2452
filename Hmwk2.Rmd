@@ -19,3 +19,28 @@ Trash_Wheel_data =
 
 as.integer(pull(Trash_Wheel_data, sports_balls))
 ```
+
+```{r problem 1.2}
+Precipitation2018_data =
+  read_excel("./Hmwk2data/Trash_Wheel.xlsx", sheet = "2018 Precipitation") %>%
+  janitor::clean_names() %>%
+  drop_na() %>%
+  rename(month = precipitation_in) %>%
+  rename(in_precipitation = x2) %>%
+  mutate(
+    year = 2018)
+
+Precipitation2017_data =
+  read_excel("./Hmwk2data/Trash_Wheel.xlsx", sheet = "2017 Precipitation") %>%
+  janitor::clean_names() %>%
+  drop_na() %>%
+  rename(month = precipitation_in) %>%
+  rename(in_precipitation = x2) %>%
+  mutate(
+    year = 2017)
+
+precipitation_data = 
+  left_join(Precipitation2017_data, Precipitation2018_data, by = "month")
+
+month.name = (pull(precipitation_data, month))
+```
