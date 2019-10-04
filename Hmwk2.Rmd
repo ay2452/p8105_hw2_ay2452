@@ -90,3 +90,14 @@ thirtyfiveeight_final_data =
   anti_join(unemployment_data, thirtyfiveeight_data)
   anti_join(thirtyfiveeight_data, unemployment_data)
 ```
+
+```{r problem 3.1}
+baby_names_data =
+  read_csv("./Hmwk2data/Popular_Baby_Names.csv") %>%
+  janitor::clean_names() %>%
+  distinct() %>%
+  mutate(
+    ethnicity = 
+      factor(levels = 1:4, labels = c("Asian and Pacific Islander", "Black Non Hispanic", "White Non Hispanic", "Hispanic"))
+  )
+```
