@@ -44,3 +44,14 @@ precipitation_data =
 
 month.name = (pull(precipitation_data, month))
 ```
+
+```{r problem 2.1}
+polls_data = 
+  read_csv("./fivethirtyeight_datasets/pols-month.csv") %>%
+  janitor::clean_names() %>%
+  separate(col = mon, into = c("yr", "month", "day")) %>%
+  rename(month = month.name(mon)) %>%
+  mutate(
+    president = gop, dem) %>%
+  select(-prez_dem, -prez_gop, -day)
+```
