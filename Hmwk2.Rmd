@@ -76,3 +76,17 @@ unemployment_data =
     values_to = "unemploy_rate"
   )
 ```
+
+```{r problem 2.4}
+thirtyfiveeight_data = 
+  left_join(polls_data, snp_data)
+  inner_join(polls_data, snp_data )
+  anti_join(snp_data, polls_data)
+  anti_join(polls_data, snp_data)
+
+thirtyfiveeight_final_data = 
+  left_join(thirtyfiveeight_data, unemployment_data)
+  inner_join(thirtyfiveeight_data, unemployment_data)
+  anti_join(unemployment_data, thirtyfiveeight_data)
+  anti_join(thirtyfiveeight_data, unemployment_data)
+```
