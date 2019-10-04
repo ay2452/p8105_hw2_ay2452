@@ -111,3 +111,11 @@ Olivia_data =
 Boys_data = 
   filter(baby_names_data, gender == "MALE")
 ```
+
+```{r problem 3.4}
+baby_scatter_data = 
+  filter(baby_names_data, gender == "MALE", year_of_birth == "2016", ethnicity == "WHITE NON HISPANIC")
+
+ggplot(baby_scatter_data, aes(x =childs_first_name, y = rank)) +
+  geom_point()
+```
