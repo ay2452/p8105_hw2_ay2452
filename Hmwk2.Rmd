@@ -106,3 +106,8 @@ baby_names_data =
 Olivia_data = 
   filter(baby_names_data, childs_first_name == "Olivia")
 ```
+
+```{r problem 3.3}
+Boys_data = 
+  filter(baby_names_data, gender == "MALE")
+```
