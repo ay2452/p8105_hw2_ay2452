@@ -55,3 +55,13 @@ polls_data =
     president = gop, dem) %>%
   select(-prez_dem, -prez_gop, -day)
 ```
+
+```{r problem 2.2}
+snp_data = 
+  read_csv("./fivethirtyeight_datasets/snp.csv") %>%
+  janitor::clean_names() %>%
+  separate(col = date, into = c("yr", "month", "day")) %>%
+  rename(month = month.name(mon)) %>%
+  select(-day) %>%
+  select(year, month, close)
+```
